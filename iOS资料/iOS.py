@@ -80,6 +80,9 @@ http://blog.csdn.net/xueshangzhiying_ios/article/details/62039168
 http://blog.csdn.net/qian521kun521/article/details/53397090
 
 2.http socket的区别，http是在网络里面的那一层。这里考的是网络传输的那7层。如何知道消息体的数据已经发送完成了。tcp udp的理解
+http://blog.csdn.net/li_ning_/article/details/52117463
+http://blog.csdn.net/superjunjin/article/details/7841099
+
 
 3.一个新的app的设计思路，主要看架构方面的想法
 
@@ -92,29 +95,50 @@ http://www.cocoachina.com/ios/20160113/14896.html
 https://www.jianshu.com/p/6f2cc4b1f5a1
 
 6.GCD中group的优点，及串行，并行队列
+http://www.cocoachina.com/ios/20150731/12819.html
+https://www.jianshu.com/p/35702778d9dc
+https://www.jianshu.com/p/f536f9a17d90
 
 7.framework时动态链接库还是静态链接库，和.a的区别是什么
+https://www.cnblogs.com/bboymars/p/4980754.html
+https://www.jianshu.com/p/5eea9a56d249
 
 8.将对象加入字典，array时的引用计数是多少
+字典的原理看这里：http://blog.csdn.net/zixiweimi/article/details/56677203
+
+array肯定会+1
 
 9.weak的实现原理 strong的实现原理
+http://www.cocoachina.com/ios/20170328/18962.html
+《Objective-C高级编程：iOS与OS X多线程和内存管理》
+
 
 10.关于引用计数的知识点
+《Objective-C高级编程：iOS与OS X多线程和内存管理》
+
 
 11.block中的弱引用强引用，什么情况会导致循环引用，什么时候需要__strong保持强引用
+《Objective-C高级编程：iOS与OS X多线程和内存管理》
+
 
 12.app的性能优化，都有哪些
+https://mp.weixin.qq.com/s/oUOKKEuaoVW4nNISMD-CHg
+https://mp.weixin.qq.com/s/ijooFqdxQPy_75TRrSfJ0g
+这两个回答解决了很多的问题
 
 13.对于image加载的优化方案有哪些
 
 14.Runloop, runtime的理解
+https://www.ianisme.com/ios/2019.html
 
 
-//阿里一面
 
 
+
+//阿里 分组一面
 
 1.Category支持添加属性与成员变量吗
+https://www.jianshu.com/p/535d1574cb86
 
 2.是否了解设计模式, 用过哪些
 
@@ -129,6 +153,10 @@ https://www.jianshu.com/p/6f2cc4b1f5a1
 
 
 7.说说Cell重用原理
+底层原理是两个可变数组，一个装在界面显示的cell（地址） ，一个装被标记且划出界面的cell.说到这里大家应该懂了，面试的时候千万不要说什么identifir这么简单的回答。
+
+可以在UITableView.h文件中去搜索visible  关键字。其实底层就有有个visibleArray里面的cell就是visibleCells
+
 
 8.异步下载如何实现
 
@@ -171,173 +199,264 @@ https://www.jianshu.com/p/6f2cc4b1f5a1
 
 27.有没有自己设计过网络控件？
 
-28.
+28.介绍下内存的几大区域？
 
-29.
+这个在网易和阿里的面试答案中有，前面已经给了
 
-30.
+29.你是如何组件化解耦的？
 
-31.
+30.runtime如何通过selector找到对应的IMP地址
 
-32.
+31.runloop内部实现逻辑？
 
-33.
+32.你理解的多线程？
 
-34.
+33.GCD执行原理？
 
-35.
+34.怎么防止别人反编译你的app？
 
-36.
+35.YYAsyncLayer如何异步绘制？
 
+36.优化你是从哪几方面着手？
 
-1.
 
-2.
 
-3.
+//阿里分组二面
 
-4.
 
-5.
 
-6.
+1.什么时候接触iOS
 
-7.
+2.你的这些项目是外包还是自己开发的
 
-8.
+3.OC允许多继承吗
 
-9.
+4.要用什么方式实现多继承
 
-10
+5.了解内存管理吗, 吧唧吧唧...
 
-11
+6.了解设计模式吗
 
-12.
+7.具体说说MVC
 
-13.
+8.了解KVO吗
 
-14.
+9.如果让你设计KVO, 要怎么设计
 
-15.
+10现在你是如何适配的
 
-16.
+11比较下storyboard和全代码
 
-17.
+12.印象比较深的项目, 难点在哪
 
-18.
+13.Cell重用机制具体怎么实现
 
-19.
+14.如果有1w张图片要在屏幕滚动显示(每张图片满屏), 至少要几个cell, 如何实现循环滚动
 
-20.
+15.平时是怎么进行测试的, 内存方面怎么测试
 
+16.平时如何实现网络请求, 一般返回的数据是什么格式, 如何解析.
 
+17.平时自己有没有封装过比较复杂的控件
 
+18.在什么情况使用Notification
 
-1.
+19.如何实现类似 "Find My iPhone" 这样功能
 
-2.
+20.怎么判断某个 cell 是否显示在屏幕上
 
-3.
+21.进程和线程的区别
 
-4.
+22.TCP 与 UDP 区别
 
-5.
+23.TCP 流量控制
 
-6.
+24.数组和链表的区别
 
-7.
+25.UIView 生命周期
 
-8.
+26.如果页面 A 跳转到 页面 B，A 的 viewDidDisappear 方法和 B 的 viewDidAppear 方法哪个先调用？
 
-9.
+27.block 循环引用问题
 
-10
+28.ARC 的本质
 
-11
+29.RunLoop 的基本概念，它是怎么休眠的？
 
-12.
+30.Autoreleasepool 什么时候释放，在什么场景下使用？
 
-13.
+31.如何找到字符串中第一个不重复的字符
 
-14.
 
-15.
+32.哈希表如何处理冲突
 
-16.
+33.在一个app中间有一个button，在你手触摸屏幕点击后，到这个button收到点击事件，中间发生了什么
 
-17.
+34.代码文件编译生成过程，做了哪些事情
 
-18.
+35.app启动做了哪些事情；
 
-19.
+36.AFN原理
 
-20.
 
 
+37.说说你项目中常用到的调试技巧？
 
 
-1.
 
-2.
+//阿里三面
 
-3.
 
-4.
+1.dSYM你是如何分析的？
 
-5.
+2.多线程有哪几种？你更倾向于哪一种？
 
-6.
+3.单例弊端？
 
-7.
+4.如何把异步线程转换成同步任务进行单元测试？
 
-8.
+5.介绍下App启动的完成过程？
 
-9.
+6.比如App启动过慢，你可能想到的因素有哪些？
 
-10
+7.0x8badf00d表示是什么？
 
-11
+8.怎么防止反编译？
 
-12.
+9.说说你遇到到的技术难点？
 
-13.
+10.说说你了解的第三方原理或底层知识？
 
-14.
+//蚂蚁金服
 
-15.
+11.在KVO中，他是怎么知道监听的对象发生了变化？
 
-16.
+12.字典的工作原理 ？怎100w个中是怎么快速去取value？
 
-17.
+13.一个上线的项目，知道这个方法可能会出问题，在不破坏改方法前提下，怎么搞？
 
-18.
+14.Block和函数指针的区别？
 
-19.
+//支付宝
 
-20.
+15.iOS多线程有哪些？他们之间各有什么区别，优劣性？
 
+16.UIView和NSObject这两个类，所有里面的方法和原理都需要了解一下。
 
+17.Runloop和线程的关系？
 
+18.Runloop的作用？RunloopMode的原理？
 
-1.
 
-2.
 
-3.
+//饿了么面试题
 
-4.
+1.automic一定是线程安全的吗
 
-5.
+2.iOS中的消息传递是怎么一步一步实现的
 
-6.
+3.category和extension有什么区别
 
-7.
+4.iOS中的私有属性如何设置
 
-8.
+5.串行队列和同步锁两者在保护线程安全上的性能对比
 
-9.
+6.并行队列是同时执行的吗
 
-10
+7.iOS中有哪些锁，你了解多少
+
+8.iOS中UIKit框架的架构
+
+9.UIView和CALayer之间的关系
+
+10.UIView、CoreAnimation和CoreGraphics的关系
+
+11.应该知道SegmentFault，这个在iOS中是什么错误，那StackOverFlow呢
+
+12.GCD、NSThread、NSOperation性能上有何区别
+
+
+//网易一面
+13.自我介绍
+
+14.学习iOS动机
+
+15.对iOS的看法
+
+16.谈项目
+
+17.怎么看待审核被拒
+
+18.怎么完成后期检测, 优化
+
+19.id ,NSObject, id<NSObject>区别
+
+20.了解iOS内存管理吗
+
+21.release 和 autorelease 区别
+
+22.autorelease 和 @autorelease区别
+
+23.weak什么时候用
+
+24.unsafe_unretained , weak, assign 区别
+
+25.__block什么时候用
+
+26.在block里面, 对数组执行添加操作, 这个数组需要声明成 __block吗
+
+27.在block里面, 对NSInteger进行修改, 这个NSInteger是否需要声明成__blcok
+
+28.了解循环引用吗
+
+29.NSThread, NSOperation, GCD区别
+
+30.如何在异步下载时候, 取消下载, 保证流量不浪费
+
+31了解runtime吗
+
+32.runtime什么时候用
+
+33.通知和KVO区别
+
+34.有序和无序set实现原理区别
+
+35.深度遍历和广度遍历使用场景
+
+
+36.常用的设计模式
+
+37.哪些设计模式属于观察者模式
+
+38.总结下刚才面试中哪些不足
+
+39.自己有什么优点
+
+
+40.有什么想问的
+
+
+1.你一般学习iOS是如何学习的？
+
+2.app内存你是如何分析的？
+
+3.用过 TableView 吗，平时怎么解决 TableView 滑动卡顿问题的？
+
+4.网络模型了解么？有哪几种？说说你的看法？
+
+5.block本质是什么？
+
+6.KVC机制是如何通过key找到value。
+
+7.说说你最熟悉的第三方，知晓其原理么？
+
+8.如何实现一个数组每个元素依次向右移动k位。(后头的往前面补) 比如: [1, 2, 3, 4, 5] 挪两位变成[4, 5, 1, 2, 3]
+
+9.实现连连看算法
+
+10T9算法如何实现, 全拼算法
+
+
 
 11
 
@@ -1180,6 +1299,8 @@ https://www.jianshu.com/p/6f2cc4b1f5a1
 iOS App间常用的五种通信方式
 http://www.cocoachina.com/ios/20171229/21709.html
 
+深入了解哈希表
+http://ios.jobbole.com/87716/
 
 
 1.项目中的多线程的使用
